@@ -2,7 +2,7 @@
 
 
 
-#### collate_fn
+
 import torch
 
 def collate_fn(batch):
