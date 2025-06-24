@@ -1,4 +1,4 @@
-# train
+### train
 
 from transformers import Trainer
 
@@ -17,3 +17,8 @@ trainer.save_model()
 trainer.log_metrics("train", train_results.metrics)
 trainer.save_metrics("train", train_results.metrics)
 trainer.save_state()
+
+# eval metric
+metric = evaluate.load('accuracy')
+def compute_metrics(p):
+    return metric.compute(predictions=np.argmax(p.predictions, axis=1), references=p.label_ids)
