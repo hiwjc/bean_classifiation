@@ -1,15 +1,10 @@
 # model
 
-#
 from transformers import ViTFeatureExtractor
 
 model_name_or_path = 'google/vit-base-patch16-224-in21k'
 feature_extractor = ViTFeatureExtractor.from_pretrained(model_name_or_path)
-
-
-
 #
-
 from transformers import ViTForImageClassification
 
 labels = ds['train'].features['labels'].names
