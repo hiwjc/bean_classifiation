@@ -1,4 +1,4 @@
-# 실전 적용
+# 실전 적용 (추론)
 
 import torch
 from PIL import Image
@@ -23,8 +23,16 @@ class BeanDiseaseClassifier:
         label_name = self.model.config.id2label[str(predicted_class)]
         return label_name
 
-# 사용 예시
-if __name__ == '__main__':
-    classifier = BeanDiseaseClassifier()
-    image_path = 'test_image.jpg'
-    print('Predicted:', classifier.predict(image_path))
+### 
+    class BeanDiseaseClassifier:
+    def __init__(self):
+        self.image_processor = image_processor
+        self.model = model
+
+    def predict(self, image):
+        inputs = self.image_processor(images=image, return_tensors='pt')
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+        probs = outputs.logits.softmax(dim=-1)
+        label_id = probs.argmax().item()
+        return self.model.config.id2label[str(label_id)]
