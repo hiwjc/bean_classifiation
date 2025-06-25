@@ -1,3 +1,10 @@
+학습 및 성능 평가 결과 입니다.
+
+![image](https://github.com/user-attachments/assets/fbf3acda-9101-409a-a576-1a765e10113e)
+
+
+
+
 파인 튜닝 모델 결과 (UI) 입니다.
 ![ui 실행](https://github.com/user-attachments/assets/1bd9624d-e77e-4ad0-9cf3-3d5057deaa84)
 ![ui 실행 2](https://github.com/user-attachments/assets/38c1cc46-ef41-4c5a-8082-34f87b7c3be8)
